@@ -1,13 +1,13 @@
 # contains bunch of buggy examples
-# taken from https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
-import cPickle
+# taken from 
+# https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
+#import cPickle
 import subprocess
 import base64
-import subprocess
 import flask
 
 # Input injection
-def transcode_file(request, filename):
+def transcode_file(filename):
     command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
     subprocess.call(command, shell=True)  # a bad idea!
 
